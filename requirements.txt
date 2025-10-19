@@ -1,0 +1,6 @@
+pandas
+openpyxl
+customtkinter
+fuzzywuzzy
+python-Levenshtein
+pyinstaller
