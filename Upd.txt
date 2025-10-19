@@ -1,0 +1,19 @@
+# Класс-заглушка для перенаправления вывода
+class Redirect:
+    def __init__(self):
+        pass
+
+    def write(self, *args, **kwargs):
+        # Просто игнорируем все попытки записи
+        pass
+
+    def flush(self, *args, **kwargs):
+        # Игнорируем попытки "сбросить буфер"
+        pass
+
+# Проверяем, существуют ли стандартные потоки вывода.
+# В скомпилированном .exe без консоли они могут быть None.
+if sys.stdout is None:
+    sys.stdout = Redirect()
+if sys.stderr is None:
+    sys.stderr = Redirect()
